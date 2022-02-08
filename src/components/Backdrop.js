@@ -1,5 +1,5 @@
 import "../index.css";
-const Backdrop = () => {
-  return <div className="backdrop"></div>;
+const Backdrop = (props) => {
+  return <div className="backdrop" onClick={props.onClick}></div>;
 };
 export default Backdrop;
