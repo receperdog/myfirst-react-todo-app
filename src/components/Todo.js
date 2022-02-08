@@ -1,7 +1,13 @@
 import "../index.css";
+import { useState } from "react";
+import Modal from "./Modal";
+import Backdrop from "./Backdrop";
+
 const Todo = (props) => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
   const deleteHandler = () => {
-    console.log(`clicked to ${props.text}`);
+    setModalIsOpen(true);
   };
 
   return (
@@ -14,6 +20,8 @@ const Todo = (props) => {
           </button>
         </div>
       </div>
+      {modalIsOpen ? <Modal /> : null}
+      {modalIsOpen ? <Backdrop /> : null}
     </div>
   );
 };
